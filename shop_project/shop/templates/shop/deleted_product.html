@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Deleted product</title>
+</head>
+<body>
+
+
+This product has been deleted properly.
+
+<form action="/shop/products/" method="post">
+    {% csrf_token %}
+    <input type="submit" value="Back to products">
+</form>
+
+</body>
+</html>

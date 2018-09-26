@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Products</title>
+</head>
+
+<body>
+
+    <table style="align-items: center" border="20pt">
+
+        <tr>
+            <td><strong>Product Name</strong></td>
+            <td><strong>Price</strong></td>
+            <td><strong>Availability</strong></td>
+            <td><strong>Review</strong></td>
+            <td><strong>Quantity</strong></td>
+
+        </tr>
+
+
+     {% for product in products  %}
+
+
+    <form action="/shop/delete_product/{{ product.id }}/" method="post">
+
+        {% csrf_token %}
+
+
+            <tr>
+
+                <td style="cursor:pointer" onclick="location.href='{% url 'get_product' product.id %}'">{{ product.name }}</td>
+
+                <td>£{{ product.price }}</td>
+
+                <td> {{ product.availability }}
+
+                    <input type="submit" value="Delete item">
+
+                </td>
+
+                <td style="cursor:pointer" onclick="location.href='{% url 'product_reviews' product.id %}'"> Review </td>
+
+                <td>{{ product.quantity }}</td>
+
+            </tr>
+
+
+
+
+        {% endfor %}
+
+
+
+
+    </form>
+    </table>
+</body>
+
+</html>

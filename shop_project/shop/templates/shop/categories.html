@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Categories</title>
+</head>
+<body>
+
+
+    <table style="align-items: center" border="20pt">
+
+        <tr>
+            <td><strong>Category Name</strong></td>
+
+        </tr>
+
+        {% for category in categories %}
+
+        <tr>
+            <td><a href='{% url 'get_category' category.slug %}'> {{ category.name }} </a> </td>
+        </tr>
+
+        {% endfor %}
+
+    </table>
+
+
+
+
+
+
+</body>
+</html>
