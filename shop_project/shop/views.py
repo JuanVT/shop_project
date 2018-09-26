@@ -99,15 +99,6 @@ def get_category(request, category_slug):
     template = loader.get_template("shop/category.html")
     return HttpResponse(template.render(context=context, request=request))
 
-#
-# def add_review(request):
-#     review_data = request.POST.get('review')
-#     product_id = request.POST.get('product')
-#
-#     Review.objects.create(review=review_data, product_id=product_id)
-#
-#     return get_product(request, product_id)
-
 
 def add_review(request):
 
